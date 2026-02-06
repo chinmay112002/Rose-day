@@ -159,7 +159,7 @@
 </script>
 
 <div class="card-container">
-  <div class="card" onclick="this.classList.toggle('open')">
+  <div <div class="card" onclick="openCard()">
 
     <!-- Front -->
     <div class="card-face card-front">
@@ -193,6 +193,20 @@
 
   </div>
 </div>
+<!-- Background Romantic Music -->
+<audio id="bg-music" loop>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+<script>
+  function openCard() {
+    const card = document.querySelector('.card');
+    card.classList.toggle('open');
 
+    const music = document.getElementById('bg-music');
+    if (music) {
+      music.play();
+    }
+  }
+</script>
 </body>
 </html>
